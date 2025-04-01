@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>Editar Tarea</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="editForm" class="edit-form">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Título</mat-label>
+      <input matInput formControlName="title" required>
+      <mat-error *ngIf="editForm.get('title')?.hasError('required')">
+        El título es obligatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Descripción</mat-label>
+      <textarea matInput formControlName="description" rows="4"></textarea>
+    </mat-form-field>
+
+    <mat-checkbox formControlName="completed">Completada</mat-checkbox>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-raised-button 
+          color="primary" 
+          (click)="onSave()"
+          [disabled]="!editForm.valid">
+    Guardar
+  </button>
+</mat-dialog-actions>

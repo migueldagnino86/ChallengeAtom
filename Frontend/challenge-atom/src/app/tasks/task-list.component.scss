@@ -1,0 +1,49 @@
+.task-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  .task-form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  
+    input {
+      flex: 1;
+      padding: 0.5rem;
+    }
+  }
+  
+  .task-list {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+  
+    mat-list-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+  
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+  
+  .task-info {
+    flex: 1;
+  
+    .completed {
+      text-decoration: line-through;
+      color: #888;
+    }
+  
+    small {
+      display: block;
+      color: #666;
+      font-size: 0.8rem;
+    }
+  }
